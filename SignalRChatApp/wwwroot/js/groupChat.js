@@ -93,6 +93,8 @@ function joinRoom(roomName) {
     } else {
         groupLatestActivity.textContent = latestMessageTime.toLocaleString();
     }
+    
+    updatePillColor(roomName);
 }
 
 function fetchGroupChat(roomName) {
@@ -129,10 +131,22 @@ connection.on("UpdateGroupList", function (updatedGroups) {
 
 function sendMessage(event) {
     const message = document.getElementById("msg_input").value;
-    connection.invoke("SendMessage", "Global", currentUsername, message).catch(function (err) {
+    connection.invoke("SendMessage", currentGroupChat, currentUsername, message).catch(function (err) {
         return console.error(err.toString());
     });
     document.getElementById("msg_input").value = '';
     console.log("Message sent");
     event.preventDefault();
+}
+
+function updatePillColor(roomName) {
+    const validId = 'group-item-' + roomName.replace(/[^a-zA-Z0-9-_]/g, '_');
+    const groupItem = document.getElementById(validId);
+    if (groupItem) {
+        const pill = groupItem.querySelector('.badge');
+        if (pill) {
+            pill.classList.remove('bg-danger');
+            pill.classList.add('bg-success');
+        }
+    }
 }

@@ -7,25 +7,16 @@ let navLinks = [
 ]
 
 document.addEventListener('DOMContentLoaded', () => {
-    const logoutButton = document.getElementById('logoutButton');
-    if (logoutButton) {
-        logoutButton.addEventListener('click', logout);
-    }
     checkAuthStatus();
 });
 
 function checkAuthStatus() {
-    fetch('/User/CheckAuth')
-        .then(response => response.json())
-        .then(data => {
-            isLoggedIn = data.isAuthenticated;
-            currentUsername = data.username || '';
-            updateNavbar();
-            if (isLoggedIn) {
-                startSignalRConnection();
-            }
-        })
-        .catch(error => console.error('Error checking auth status:', error));
+    currentUsername = sessionStorage.getItem('username');
+    isLoggedIn = !!currentUsername;
+    updateNavbar();
+    if (isLoggedIn) {
+        startSignalRConnection();
+    }
 }
 
 function updateNavbar() {
@@ -130,6 +121,64 @@ function startSignalRConnection() {
     }
 }
 
+function register(username) {
+    fetch("/User/Register", {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/x-www-form-urlencoded",
+        },
+        body: `username=${encodeURIComponent(username)}`
+    })
+        .then(response => {
+            if (response.ok) {
+                alert("Registration successful!");
+            } else {
+                alert("Registration failed. Username might already exist.");
+            }
+        });
+}
+
+function login(username) {
+    fetch("/User/Login", {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/x-www-form-urlencoded",
+        },
+        body: `username=${encodeURIComponent(username)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.username) {
+            sessionStorage.setItem('username', data.username);
+            currentUsername = data.username;
+            checkAuthStatus();
+        } else {
+            alert("Login failed. User not found.");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Login failed. Please try again.");
+    });
+}
+
+function logout() {
+    const username = sessionStorage.getItem('username');
+    fetch("/User/Logout", {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/x-www-form-urlencoded",
+        },
+        body: `username=${encodeURIComponent(username)}`
+    })
+    .then(() => {
+        sessionStorage.removeItem('username');
+        currentUsername = '';
+        checkAuthStatus();
+    })
+    .catch(error => console.error('Error:', error));
+}
+
 function displayMessage(message) {
     const li = document.createElement("div");
     li.classList.add("mb-2");
@@ -150,13 +199,4 @@ function displayMessage(message) {
     li.appendChild(p);
 
     document.getElementById("msg_feed").appendChild(li);
-}
-
-function logout() {
-    fetch('/User/Logout', { method: 'POST' })
-        .then(response => {
-            if (response.ok) {
-                checkAuthStatus();
-            }
-        });
 }

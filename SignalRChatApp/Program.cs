@@ -17,8 +17,16 @@ builder.Services.AddSignalR(options =>
 	options.EnableDetailedErrors = true; // Enable detailed errors
 });
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+// Remove the cookie authentication
+// builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//     .AddCookie();
 
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ChatRoomService>();
@@ -39,9 +47,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthentication(); 
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
