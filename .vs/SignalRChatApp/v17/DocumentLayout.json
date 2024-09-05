@@ -1,0 +1,217 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|c:\\users\\fptshop\\source\\repos\\signalrchatapp\\signalrchatapp\\wwwroot\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\wwwroot\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\services\\chatroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\services\\chatroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\data\\chatappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\data\\chatappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\models\\chatroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\models\\chatroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\signalrchatapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5EB4BD4-F955-447B-8E9F-5596B25C39E1}|SignalRChatApp\\SignalRChatApp.csproj|solutionrelative:signalrchatapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 149,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChatRoomService.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Services\\ChatRoomService.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Services\\ChatRoomService.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Services\\ChatRoomService.cs",
+              "RelativeToolTip": "SignalRChatApp\\Services\\ChatRoomService.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAowD0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:30:27.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChatAppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Data\\ChatAppDbContext.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Data\\ChatAppDbContext.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Data\\ChatAppDbContext.cs",
+              "RelativeToolTip": "SignalRChatApp\\Data\\ChatAppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:24:04.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Models\\Message.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Models\\Message.cs",
+              "RelativeToolTip": "SignalRChatApp\\Models\\Message.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:22:43.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChatRoom.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Models\\ChatRoom.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Models\\ChatRoom.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Models\\ChatRoom.cs",
+              "RelativeToolTip": "SignalRChatApp\\Models\\ChatRoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:22:09.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Models\\User.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Models\\User.cs",
+              "RelativeToolTip": "SignalRChatApp\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T04:21:40.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "SignalRChatApp\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAswB4AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-19T04:03:44.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "SignalRChatApp\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:12:09.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Controllers\\UserController.cs",
+              "RelativeToolTip": "SignalRChatApp\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwBUAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:08:51.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "chat.js",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\wwwroot\\js\\chat.js",
+              "RelativeDocumentMoniker": "SignalRChatApp\\wwwroot\\js\\chat.js",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\wwwroot\\js\\chat.js",
+              "RelativeToolTip": "SignalRChatApp\\wwwroot\\js\\chat.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-18T15:51:24.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "SignalRChatApp\\Hubs\\ChatHub.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T15:01:58.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Program.cs",
+              "RelativeDocumentMoniker": "SignalRChatApp\\Program.cs",
+              "ToolTip": "C:\\Users\\FPTSHOP\\source\\repos\\SignalRChatApp\\SignalRChatApp\\Program.cs",
+              "RelativeToolTip": "SignalRChatApp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T15:00:49.435Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
