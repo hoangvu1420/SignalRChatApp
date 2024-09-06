@@ -82,40 +82,25 @@ public class ChatRoomService(ChatAppDbContext dbContext)
 		await dbContext.SaveChangesAsync();
 	}
 
-	public async Task<IEnumerable<User>?> GetUsersInChatRoomAsync(string chatRoomName)
-	{
-		var chatRoom = await dbContext.ChatRooms
-								.Include(cr => cr.Users)
-								.FirstOrDefaultAsync(cr => cr.Name == chatRoomName);
-		return chatRoom?.Users;
-	}
-
 	public async Task<IEnumerable<MessageDto>> GetChatRoomMessagesAsync(string chatRoomName)
 	{
-		var chatRoom = await dbContext.ChatRooms
-			.Include(cr => cr.Messages)
-				.ThenInclude(m => m.Sender)
-			.FirstOrDefaultAsync(cr => cr.Name == chatRoomName);
-
-		if (chatRoom == null)
-		{
-			return Enumerable.Empty<MessageDto>();
-		}
-
-		return chatRoom.Messages.Select(m => new MessageDto
-		{
-			User = m.Sender.UserName,
-			Message = m.Content,
-			Timestamp = m.Timestamp,
-			RoomName = chatRoomName
-		});
+		return await dbContext.Messages
+			.Where(m => m.ChatRoom.Name == chatRoomName)
+			.Select(m => new MessageDto
+			{
+				User = m.Sender.UserName,
+				Message = m.Content,
+				Timestamp = m.Timestamp,
+				RoomName = chatRoomName
+			})
+			.ToListAsync();
 	}
 
 	public async Task<IEnumerable<ChatRoom>?> GetChatRoomsForUserAsync(Guid userId)
 	{
 		var user = await dbContext.Users
-								.Include(u => u.ChatRooms)
-								.FirstOrDefaultAsync(u => u.Id == userId);
+			.Include(u => u.ChatRooms)
+			.FirstOrDefaultAsync(u => u.Id == userId);
 		return user?.ChatRooms;
 	}
 }

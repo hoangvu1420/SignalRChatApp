@@ -1,28 +1,28 @@
 let currentGroupChat = "Global";
 let groupChats = [];
 
-document.addEventListener('DOMContentLoaded', (event) => {
+$(document).ready(() => {
     startSignalRConnection();
 
-    document.getElementById("send_btn").addEventListener("click", sendMessage);
-    document.getElementById("msg_input").addEventListener("keypress", function(event) {
+    $("#send_btn").on("click", sendMessage);
+    $("#msg_input").on("keypress", function(event) {
         if (event.key === "Enter") {
             sendMessage(event);
         }
     });
 
-    document.getElementById("create-group-btn").addEventListener("click", function (event) {
+    $("#create-group-btn").on("click", function () {
         $('#createGroupModal').modal('show');
     });
 
-    document.getElementById("confirmCreateGroup").addEventListener("click", function (event) {
-        const groupName = document.getElementById("groupNameInput").value.trim();
+    $("#confirmCreateGroup").on("click", function () {
+        const groupName = $("#groupNameInput").val().trim();
         if (groupName) {
             connection.invoke("CreateChatRoom", groupName).catch(function (err) {
                 return console.error(err.toString());
             });
             $('#createGroupModal').modal('hide');
-            document.getElementById("groupNameInput").value = '';
+            $("#groupNameInput").val('');
         }
     });
 
@@ -36,44 +36,49 @@ connection.on("ReceiveMessage", function (chatMessage) {
 });
 
 function fetchGroupChats() {
-    fetch('/GroupChat/GetGroupChats')
-        .then(response => response.json())
-        .then(data => {
+    $.ajax({
+        url: '/GroupChat/GetGroupChats',
+        method: 'GET',
+        dataType: 'json',
+        success: (data) => {
             groupChats = data;
             console.log("Group chats received:", groupChats);
             populateGroupList(groupChats);
-        })
-        .catch(error => console.error('Error:', error));
+        },
+        error: (error) => {
+            console.error('Error:', error);
+        }
+    });
 }
 
 function populateGroupList(groups) {
-    const groupList = document.getElementById('group-list');
-    groupList.innerHTML = '';
-    groups.forEach(group => {
-        const li = document.createElement('li');
+    const $groupList = $('#group-list');
+    $groupList.empty();
+    $.each(groups, function(index, group) {
         const validId = 'group-item-' + group.name.replace(/[^a-zA-Z0-9-_]/g, '_');
-        li.id = validId;
-        li.className = 'list-group-item d-flex justify-content-between align-items-center';
-        li.innerHTML = `
+        const $li = $('<li>', {
+            id: validId,
+            class: 'list-group-item d-flex justify-content-between align-items-center'
+        }).html(`
             <div>
                 <span class="fw-bold">${group.name}</span>
             </div>
             <span id="group-message-count-${validId}" class="badge bg-danger rounded-pill">${group.messageCount}</span>
-        `;
-        li.addEventListener('click', () => joinRoom(group.name));
-        groupList.appendChild(li);
+        `);
+        $li.on('click', () => joinRoom(group.name));
+        $groupList.append($li);
     });
 }
 
 function updateMessageCount(groupName) {
     const validId = 'group-item-' + groupName.replace(/[^a-zA-Z0-9-_]/g, '_');
-    const groupItem = document.getElementById(validId);
-    if (groupItem) {
-        var messageCount = groupItem.querySelector('#group-message-count-' + validId);
-        if (messageCount) {
-            var count = parseInt(messageCount.textContent);
+    const $groupItem = $(`#${validId}`);
+    if ($groupItem.length) {
+        const $messageCount = $groupItem.find(`#group-message-count-${validId}`);
+        if ($messageCount.length) {
+            let count = parseInt($messageCount.text());
             count++;
-            messageCount.textContent = count;
+            $messageCount.text(count);
         }
     }
 }
@@ -98,30 +103,37 @@ function joinRoom(roomName) {
 }
 
 function fetchGroupChat(roomName) {
-    fetch(`/GroupChat/GetGroupChatMessages?name=${encodeURIComponent(roomName)}`)
-        .then(response => response.json())
-        .then(messages => {
-            const msgFeed = document.getElementById('msg_feed');
-            msgFeed.innerHTML = '';
+    $.ajax({
+        url: `/GroupChat/GetGroupChatMessages?name=${encodeURIComponent(roomName)}`,
+        method: 'GET',
+        dataType: 'json',
+        success: (messages) => {
+            const $msgFeed = $('#msg_feed');
+            $msgFeed.empty();
             if (Array.isArray(messages) && messages.length > 0) {
                 console.log('Messages loaded:', messages);
-                messages.forEach(message => displayMessage(message));
+                $.each(messages, function(index, message) {
+                    displayMessage(message);
+                });
                 const validId = 'group-item-' + roomName.replace(/[^a-zA-Z0-9-_]/g, '_');
-                const groupItem = document.getElementById(validId);
-                if (groupItem) {
-                    var messageCount = groupItem.querySelector('#group-message-count-' + validId);
-                    if (messageCount) {
-                        messageCount.textContent = '0';
+                const $groupItem = $(`#${validId}`);
+                if ($groupItem.length) {
+                    const $messageCount = $groupItem.find(`#group-message-count-${validId}`);
+                    if ($messageCount.length) {
+                        $messageCount.text('0');
                     }
                 }
-                messages.forEach(message => updateMessageCount(message.roomName));
+                $.each(messages, function(index, message) {
+                    updateMessageCount(message.roomName);
+                });
             } else {
                 console.log('No messages available');
             }
-        })
-        .catch(error => {
+        },
+        error: (error) => {
             console.error('Error fetching messages:', error);
-        });
+        }
+    });
 }
 
 connection.on("UpdateGroupList", function (updatedGroups) {
@@ -130,23 +142,22 @@ connection.on("UpdateGroupList", function (updatedGroups) {
 });
 
 function sendMessage(event) {
-    const message = document.getElementById("msg_input").value;
+    const message = $("#msg_input").val();
     connection.invoke("SendMessage", currentGroupChat, currentUsername, message).catch(function (err) {
         return console.error(err.toString());
     });
-    document.getElementById("msg_input").value = '';
+    $("#msg_input").val('');
     console.log("Message sent");
     event.preventDefault();
 }
 
 function updatePillColor(roomName) {
     const validId = 'group-item-' + roomName.replace(/[^a-zA-Z0-9-_]/g, '_');
-    const groupItem = document.getElementById(validId);
-    if (groupItem) {
-        const pill = groupItem.querySelector('.badge');
-        if (pill) {
-            pill.classList.remove('bg-danger');
-            pill.classList.add('bg-success');
+    const $groupItem = $(`#${validId}`);
+    if ($groupItem.length) {
+        const $pill = $groupItem.find('.badge');
+        if ($pill.length) {
+            $pill.removeClass('bg-danger').addClass('bg-success');
         }
     }
 }

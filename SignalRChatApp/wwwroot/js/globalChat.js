@@ -1,24 +1,22 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+$(document).ready(() => {
     startSignalRConnection();
-
     updateNavbar();
-
     fetchGlobalChat();
 
-    document.getElementById("send_btn").addEventListener("click", sendMessage);
-    document.getElementById("msg_input").addEventListener("keypress", function (event) {
+    $("#send_btn").on("click", sendMessage);
+    $("#msg_input").on("keypress", function (event) {
         if (event.key === "Enter") {
             sendMessage(event);
         }
     });
 
-    document.getElementById("registerButton").addEventListener("click", (event) => {
-        const username = document.getElementById("usernameInput").value;
+    $("#registerButton").on("click", () => {
+        const username = $("#usernameInput").val();
         register(username);
     });
 
-    document.getElementById("loginButton").addEventListener("click", (event) => {
-        const username = document.getElementById("usernameInput").value;
+    $("#loginButton").on("click", () => {
+        const username = $("#usernameInput").val();
         login(username);
     });
 
@@ -26,33 +24,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log("Message received");
         displayMessage(chatMessage);
     });
-
-    function fetchGlobalChat() {
-        fetch(`/GroupChat/GetGroupChatMessages?name=${encodeURIComponent('Global')}`)
-            .then(response => response.json())
-            .then(messages => {
-                const msgFeed = document.getElementById('msg_feed');
-                msgFeed.innerHTML = '';
-                if (Array.isArray(messages) && messages.length > 0) {
-                    messages.forEach(message => displayMessage(message));
-                    console.log('Messages loaded:', messages);
-                } else {
-                    console.log('No messages available');
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching messages:', error);
-                document.getElementById('msg_feed').innerHTML = '<p>Error loading messages.</p>';
-            });
-    }
 });
 
+function fetchGlobalChat() {
+    $.ajax({
+        url: `/GroupChat/GetGroupChatMessages?name=${encodeURIComponent('Global')}`,
+        method: 'GET',
+        dataType: 'json',
+        success: (messages) => {
+            const $msgFeed = $('#msg_feed');
+            $msgFeed.empty();
+            if (Array.isArray(messages) && messages.length > 0) {
+                $.each(messages, (index, message) => displayMessage(message));
+                console.log('Messages loaded:', messages);
+            } else {
+                console.log('No messages available');
+            }
+        },
+        error: (error) => {
+            console.error('Error fetching messages:', error);
+            $('#msg_feed').html('<p>Error loading messages.</p>');
+        }
+    });
+}
+
 function sendMessage(event) {
-    const message = document.getElementById("msg_input").value;
+    const message = $("#msg_input").val();
     connection.invoke("SendMessage", "Global", currentUsername, message).catch(function (err) {
         return console.error(err.toString());
     });
-    document.getElementById("msg_input").value = '';
+    $("#msg_input").val('');
     console.log("Message sent");
     event.preventDefault();
 }
