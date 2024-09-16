@@ -24,10 +24,6 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Remove the cookie authentication
-// builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-//     .AddCookie();
-
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ChatRoomService>();
 builder.Services.AddScoped<MessageService>();
