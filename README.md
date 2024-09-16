@@ -46,7 +46,7 @@ SignalRChatApp is a real-time chat application built with ASP.NET Core and Signa
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/SignalRChatApp.git
+   git clone https://github.com/hoangvu1420/SignalRChatApp.git
    ```
 
 2. Navigate to the project directory:
